@@ -47,10 +47,10 @@ class NBATableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! TableViewCell
         cell.playerImageView.image = UIImage(named: star[indexPath.row])
         //设置圆角
-        cell.playerImageView.layer.cornerRadius = cell.playerImageView.frame.size.width/2
-        cell.playerImageView.clipsToBounds = true
+        //cell.playerImageView.layer.cornerRadius = cell.playerImageView.frame.size.width/2
+        //cell.playerImageView.clipsToBounds = true
         cell.nameLable.text = star[indexPath.row]
-        cell.typeLable.text = "super stat"
+        //cell.typeLable.text = "super stat"
 
         return cell
     }
@@ -58,6 +58,37 @@ class NBATableViewController: UITableViewController {
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let actionHandler = { (action:UIAlertAction!) -> Void in
+            let alertMessage = UIAlertController(title: "Server Unavailable", message: "Sorry, can not use the net", preferredStyle: .Alert)
+            alertMessage.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            self.presentViewController(alertMessage, animated: true, completion: nil)
+        }
+        let callAction = UIAlertAction(title: "call 15988112961", style: .Default, handler: actionHandler)
+        
+        let cancleAction = UIAlertAction(title: "Cancle", style: .Cancel, handler: nil)
+        
+        let isLoveAction = UIAlertAction(title: "I love he", style: .Default) { (action:UIAlertAction!) -> Void in
+            let cell = tableView.cellForRowAtIndexPath(indexPath)
+            cell?.accessoryType  = .Checkmark
+        }
+        
+        let optionMenu = UIAlertController(title: nil, message: "Do you like \(star[indexPath.row])?", preferredStyle: .ActionSheet)
+        
+        
+        optionMenu.addAction(isLoveAction)
+        optionMenu.addAction(cancleAction)
+        optionMenu.addAction(callAction)
+        
+        self.presentViewController(optionMenu, animated:true, completion:nil)
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
+        
+    }
+    
+    
     
 
     /*

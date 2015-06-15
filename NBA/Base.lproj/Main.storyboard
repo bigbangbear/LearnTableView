@@ -2,43 +2,49 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="OiO-fm-zcw">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Table View Controller-->
         <scene sceneID="7nR-6o-3re">
             <objects>
                 <tableViewController id="OiO-fm-zcw" customClass="NBATableViewController" customModule="NBA" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="u0H-uw-Hhr">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="320" sectionHeaderHeight="22" sectionFooterHeight="22" id="u0H-uw-Hhr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="80" id="fT6-7r-Rgp" customClass="TableViewCell" customModule="NBA" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="320" id="fT6-7r-Rgp" customClass="TableViewCell" customModule="NBA" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fT6-7r-Rgp" id="CH2-iC-tA5">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gR5-a3-0hD">
-                                            <rect key="frame" x="15" y="10" width="60" height="60"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gR5-a3-0hD">
+                                            <rect key="frame" x="8" y="8" width="304" height="303.5"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBm-Lj-m6l">
-                                            <rect key="frame" x="86" y="9" width="250" height="21"/>
-                                            <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0x-qO-9Mc">
-                                            <rect key="frame" x="86" y="38" width="350" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBm-Lj-m6l">
+                                            <rect key="frame" x="63" y="9" width="194" height="301.5"/>
+                                            <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="27"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="centerX" secondItem="UBm-Lj-m6l" secondAttribute="centerX" id="9ky-YC-gSc"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="UBm-Lj-m6l" secondAttribute="trailing" constant="55" id="YC6-8g-VZj"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="gR5-a3-0hD" secondAttribute="bottom" id="dSF-8q-k2X"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="gR5-a3-0hD" secondAttribute="trailing" id="g7U-j8-zFF"/>
+                                        <constraint firstItem="UBm-Lj-m6l" firstAttribute="top" secondItem="CH2-iC-tA5" secondAttribute="topMargin" constant="1" id="hFp-1t-vfP"/>
+                                        <constraint firstAttribute="centerX" secondItem="UBm-Lj-m6l" secondAttribute="centerX" id="laD-ME-kN0"/>
+                                        <constraint firstItem="gR5-a3-0hD" firstAttribute="leading" secondItem="CH2-iC-tA5" secondAttribute="leadingMargin" id="mtq-D2-KhL"/>
+                                        <constraint firstAttribute="centerX" secondItem="UBm-Lj-m6l" secondAttribute="centerX" id="r2k-uG-muO"/>
+                                        <constraint firstItem="gR5-a3-0hD" firstAttribute="top" secondItem="CH2-iC-tA5" secondAttribute="topMargin" id="tdV-eH-gEW"/>
+                                        <constraint firstAttribute="centerY" secondItem="UBm-Lj-m6l" secondAttribute="centerY" id="yWf-uS-fMl"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="nameLable" destination="UBm-Lj-m6l" id="uwi-yr-JpQ"/>
                                     <outlet property="playerImageView" destination="gR5-a3-0hD" id="6v9-ES-0U6"/>
-                                    <outlet property="typeLable" destination="g0x-qO-9Mc" id="Ef2-Fx-IVX"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
